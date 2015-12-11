@@ -1,0 +1,28 @@
+{
+  "name": "angular-aside-menu",
+  "version": "0.1",
+  "homepage": "https://github.com/mahmutduva/angular-aside-menu",
+  "author": "Mahmut Duva <mahmutduva@gmail.com>",
+  "description": "Angularjs side menu",
+  "main": [
+    "dist/aside-menu.js"
+  ],
+  "keywords": [
+    "angularjs",
+    "side menu"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.8"
+  },
+  "dependencies": {
+    "bootstrap": "~3.3.6"
+  }
+}

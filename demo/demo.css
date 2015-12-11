@@ -1,0 +1,38 @@
+.aside-menu{
+    left: -240px;
+    right: -240px;
+    top:-240px;
+    bottom:-240px;
+    position: absolute;
+    z-index: -1;
+    width: 240px;
+}
+
+.aside-menu.open.left{
+    left: 0;
+    top:0;
+    z-index: 99;
+    -webkit-transition: left .6s;
+    -o-transition: left .6s;
+    transition: left .6s ;
+}
+
+.aside-menu.open.right{
+    left:inherit;
+    right: 0;
+    top:0;
+    z-index: 99;
+    -webkit-transition: right .6s;
+    -o-transition: right .6s;
+    transition: right .6s ;
+}
+
+.aside-menu.open.left{
+    left: 0;
+    z-index: 99;
+}
+
+.aside-menu.open.left{
+    left: 0;
+    z-index: 99;
+}

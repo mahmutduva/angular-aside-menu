@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="asideMenuDemo">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Demo Aside Menu</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="demo.css">
 </head>
 <body>
-
+    <aside class="aside-menu" id="menu">
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </aside>
+    <div style="display: table; margin: 200px auto">
+        <aside-menu position="left" target="menu" size="240px"><button type="button" class="btn btn-default">Left</button></aside-menu>
+        <aside-menu position="right" target="menu" size="240px"><button type="button" class="btn btn-default">Right</button></aside-menu>
+    </div>
 </body>
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../bower_components/jquery/dist/jquery.js"></script>
+<script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="../dist/aside-menu.js"></script>
+<script src="demo.js"></script>
 </html>

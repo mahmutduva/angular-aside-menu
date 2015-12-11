@@ -82,7 +82,7 @@
             return asideMenu;
         })
 
-        .directive('asideMenu', function (asideMenu) {
+        .directive('asideMenu', ['asideMenu', function (asideMenu) {
             'use strict';
 
             return {
@@ -99,7 +99,7 @@
                     });
                 }
             };
-        });
+        }]);
 
 
     return module
