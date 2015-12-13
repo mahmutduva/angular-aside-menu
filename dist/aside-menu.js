@@ -30,76 +30,65 @@
 }(this, function (angular) {
     'use strict';
     var module = angular.module('asideModule', [])
-
-        .factory('asideMenu', function () {
-            'use strict';
-
-            var asideMenu = function (scope, elem, attrs, isOpen) {
-
-                this.defaultOptions = {
-                    "size": "240px",
-                    "position": "left",
-                    "backdrop": false
-                };
-
-                this.scope = scope;
-
-                this.elem = elem;
-
-                this.target = attrs.target;
-
-                this.size = attrs.size;
-
-                this.position = attrs.position;
-
-                this.isOpen = isOpen;
-                // Initialize aside menu
-                this.init();
-            };
-
-            // Add instance methods
-            asideMenu.prototype = {
-
-                /**
-                 * Initialize aside menu
-                 *
-                 * @returns {undefined}
-                 */
-                init: function () {
-                    var target = document.getElementById(this.target);
-                    if(!this.isOpen){
-                        angular.element(target).addClass('open ' + this.position);
-                    }
-                    else{
-                        angular.element(target).removeClass('open ' + this.position);
-                    }
-
-                }
-
-
-            };
-
-            return asideMenu;
-        })
-
-        .directive('asideMenu', ['asideMenu', function (asideMenu) {
+        .directive('asideMenuToggle', function () {
             'use strict';
 
             return {
-                restrict: 'E',
-                scope: {
-                    target: '=?'
-                },
-
+                scope:true,
+                restrict: 'EA',
                 link: function (scope, elem, attrs) {
-                    var isOpen = true;
+                    var isOpen = false;
+
                     elem.bind('click', function () {
-                        isOpen = !isOpen;
-                        return new asideMenu(scope, elem, attrs, isOpen);
+                        var menuContent = document.getElementsByClassName("aside-menu-content");
+                        console.log(scope.isBackdrop)
+                        if(!isOpen){
+                            if (attrs.asideMenuToggle == "left") {
+                                angular.element(menuContent).css("transform", "translate3d("+scope.width+"px, 0px, 0px)");
+                                isOpen = true;
+
+                            }
+                            else if(attrs.asideMenuToggle == "right"){
+                                angular.element(menuContent).css("transform", "translate3d(-"+scope.width+"px, 0px, 0px)");
+                                isOpen = true;
+
+                            }
+                        }
+                        else{
+                            angular.element(menuContent).css("transform", "translate3d(0px, 0px, 0px)");
+                            isOpen = false;
+                        }
+
                     });
                 }
             };
-        }]);
+        })
+        .directive('asideMenu', function () {
+            'use strict';
+
+            return {
+                restrict: 'EA',
+                link: function (scope, elem, attrs) {
+                    console.log(attrs)
+                    scope.side = attrs.side;
+                    scope.width = attrs.width;
+                    scope.isBackdrop = attrs.isBackdrop;
+                    angular.element(elem).addClass("aside-menu aside-menu-" + scope.side);
+                    angular.element(elem).css("width", scope.width + "px");
+                }
+            };
+        })
+        .directive('asideMenuContent', function () {
+            'use strict';
+
+            return {
+                restrict: 'AE',
+                scope:true,
+                link: function (scope, elem, attrs) {
+                    angular.element(elem).addClass('aside-menu-content aside-menu-animate');
+                }
+            };
+        })
 
 
     return module

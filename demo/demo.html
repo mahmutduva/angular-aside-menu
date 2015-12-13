@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="demo.css">
 </head>
 <body>
-    <aside class="aside-menu" id="menu">
+    <aside-menu id="solMenu" side="left" width="240" is-backdrop="true">
         <ul class="list-group">
             <li class="list-group-item">Cras justo odio</li>
             <li class="list-group-item">Dapibus ac facilisis in</li>
@@ -16,11 +16,34 @@
             <li class="list-group-item">Porta ac consectetur ac</li>
             <li class="list-group-item">Vestibulum at eros</li>
         </ul>
-    </aside>
-    <div style="display: table; margin: 200px auto">
-        <aside-menu position="left" target="menu" size="240px"><button type="button" class="btn btn-default">Left</button></aside-menu>
-        <aside-menu position="right" target="menu" size="240px"><button type="button" class="btn btn-default">Right</button></aside-menu>
-    </div>
+    </aside-menu>
+    <aside-menu id="sagMenu" side="right" width="240" is-backdrop="false">
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </aside-menu>
+    <aside-menu id="sagMenu2" side="right" width="240" is-backdrop="false">
+        <ul class="list-group">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Morbi leo risus</li>
+            <li class="list-group-item">Porta ac consectetur ac</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+        </ul>
+    </aside-menu>
+    <aside-menu-content>
+        <div style="display: table; margin: 200px auto">
+            <button type="button" aside-menu-toggle="solMenu" class="btn btn-default">Left</button>
+            <button type="button" aside-menu-toggle="sagMenu" class="btn btn-default">Right</button>
+        </div>
+    </aside-menu-content>
+
+
+
 </body>
 <script src="../bower_components/angular/angular.js"></script>
 <script src="../bower_components/jquery/dist/jquery.js"></script>
