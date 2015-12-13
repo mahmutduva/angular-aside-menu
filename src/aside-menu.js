@@ -34,27 +34,34 @@
             'use strict';
 
             return {
-                scope:true,
                 restrict: 'EA',
                 link: function (scope, elem, attrs) {
+
                     var isOpen = false;
+                    var menus = document.getElementsByTagName("aside-menu");
+                    var targetMenuWidth = 275;
 
                     elem.bind('click', function () {
                         var menuContent = document.getElementsByClassName("aside-menu-content");
-                        console.log(scope.isBackdrop)
-                        if(!isOpen){
+                        angular.forEach(menus, function (item) {
+                            if (angular.element(item).attr("side") == attrs.asideMenuToggle) {
+                                targetMenuWidth = angular.element(item).attr("width");
+
+                            }
+                        });
+                        if (!isOpen) {
                             if (attrs.asideMenuToggle == "left") {
-                                angular.element(menuContent).css("transform", "translate3d("+scope.width+"px, 0px, 0px)");
+                                angular.element(menuContent).css("transform", "translate3d(" + targetMenuWidth + "px, 0px, 0px)");
                                 isOpen = true;
 
                             }
-                            else if(attrs.asideMenuToggle == "right"){
-                                angular.element(menuContent).css("transform", "translate3d(-"+scope.width+"px, 0px, 0px)");
+                            else if (attrs.asideMenuToggle == "right") {
+                                angular.element(menuContent).css("transform", "translate3d(-" + targetMenuWidth + "px, 0px, 0px)");
                                 isOpen = true;
 
                             }
                         }
-                        else{
+                        else {
                             angular.element(menuContent).css("transform", "translate3d(0px, 0px, 0px)");
                             isOpen = false;
                         }
@@ -83,7 +90,7 @@
 
             return {
                 restrict: 'AE',
-                scope:true,
+                scope: true,
                 link: function (scope, elem, attrs) {
                     angular.element(elem).addClass('aside-menu-content aside-menu-animate');
                 }
