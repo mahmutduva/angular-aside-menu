@@ -30,14 +30,13 @@
 }(this, function (angular) {
     'use strict';
     var module = angular.module('asideModule', [])
-        .directive('asideMenuToggle', function () {
+        .directive('asideMenuToggle', ['$compile', function ($compile) {
             'use strict';
 
             return {
                 restrict: 'EA',
                 link: function (scope, elem, attrs) {
-
-                    var isOpen = false;
+                    scope.isOpen = false;
                     var menus = document.getElementsByTagName("aside-menu");
                     var targetMenu = {
                         "width": 275,
@@ -45,25 +44,34 @@
                     };
 
                     elem.bind('click', function () {
+                        console.log(scope.isOpen)
 
                         var menuContent = document.getElementsByClassName("aside-menu-content");
+                        if (scope.isOpen) {
+                            angular.element(menuContent).css("transform", "translate3d(0px, 0px, 0px)");
 
+                        }
                         angular.forEach(menus, function (item) {
+                            if (scope.isOpen) {
+                                angular.element(item).css("transform", "translate3d(0px, 0px, 0px)");
+
+                            }
                             if (angular.element(item).attr("id") == attrs.asideMenuToggle) {
-                                targetMenu.item = angular.element(item);
+                                scope.targetMenu = angular.element(item);
                                 targetMenu.width = angular.element(item).attr("width");
                                 targetMenu.side = angular.element(item).attr("side");
-                                targetMenu.push = angular.element(item).attr("push");
+                                targetMenu.push = angular.element(item).attr("push-content");
+                                targetMenu.isBackdrop = angular.element(item).attr("is-backdrop");
                             }
                         });
-
-                        if (!isOpen) {
+                        if(scope.isOpen) scope.isOpen = false;
+                        if (!scope.isOpen) {
                             if (targetMenu.side == "left") {
                                 if (targetMenu.push == "true") {
                                     angular.element(menuContent).css("transform", "translate3d(" + targetMenu.width + "px, 0px, 0px)");
                                 }
                                 else {
-                                    targetMenu.item.css("transform", "translate3d(" + targetMenu.width + "px, 0px, 0px)");
+                                    scope.targetMenu.css("transform", "translate3d(" + targetMenu.width + "px, 0px, 0px)");
                                 }
 
                             }
@@ -73,12 +81,17 @@
 
                                 }
                                 else {
-                                    targetMenu.item.css("transform", "translate3d(-" + targetMenu.width + "px, 0px, 0px)");
+                                    scope.targetMenu.css("transform", "translate3d(-" + targetMenu.width + "px, 0px, 0px)");
                                 }
 
                             }
+                            if(targetMenu.isBackdrop == "true"){
+                                var el = $compile('<div close-aside-menu class="aside-back-drop fade"></div>')( scope );
+                                angular.element(menuContent).append(el);
 
-                            isOpen = true;
+                            }
+
+                            scope.isOpen  = true;
 
                         }
                         else {
@@ -87,15 +100,15 @@
 
                             }
                             else {
-                                targetMenu.item.css("transform", "translate3d(0px, 0px, 0px)");
+                                scope.targetMenu.css("transform", "translate3d(0px, 0px, 0px)");
                             }
-                            isOpen = false;
+                            scope.isOpen  = false;
                         }
 
                     });
                 }
             };
-        })
+        }])
         .directive('asideMenu', function () {
             'use strict';
 
@@ -108,14 +121,14 @@
                     });
                     if (attrs.side == "left") {
                         angular.element(elem).css("left", 0);
-                        if (attrs.push == "false") {
+                        if (attrs.pushContent == "false") {
                             angular.element(elem).css("z-index", "99");
                             angular.element(elem).css("left", "-" + attrs.width + "px");
                         }
                     }
                     else if (attrs.side == "right") {
                         angular.element(elem).css("right", 0);
-                        if (attrs.push == "false") {
+                        if (attrs.pushContent == "false") {
                             angular.element(elem).css("z-index", "99");
                             angular.element(elem).css("right", "-" + attrs.width + "px");
                         }
@@ -131,10 +144,27 @@
                 restrict: 'AE',
                 scope: true,
                 link: function (scope, elem, attrs) {
-                    angular.element(elem).addClass('aside-menu-content aside-menu-animate');
+                    angular.element(elem).addClass('aside-menu-content aside-menu-animate close-aside-menu');
                 }
             };
-        });
+        })
+        .directive('closeAsideMenu', function () {
+            'use strict';
+
+            return {
+                restrict: 'AC',
+                link: function (scope, elem, attrs) {
+                    elem.bind('click',function(){
+                        var menuContent = document.getElementsByClassName("aside-menu-content");
+                        angular.element(menuContent).css("transform", "translate3d(0px, 0px, 0px)");
+                        scope.targetMenu.css("transform", "translate3d( 0px, 0px, 0px)");
+                        scope.isOpen = false;
+                        elem.remove();
+                    })
+                }
+            };
+        })
+
 
 
     return module
