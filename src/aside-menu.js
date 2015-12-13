@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v0.1
+ * Version: v1.0.0
  *
  * Licensed under the MIT license
  */
@@ -115,7 +115,7 @@ var module = angular.module('asideModule', [])
                         if (scope.targetMenu.isBackdrop == "true") {
 
 
-                            var el = $compile('<div close-aside-menu class="aside-back-drop fade"></div>')(scope);
+                            var el = $compile('<div close-aside-menu class="aside-back-drop in"></div>')(scope);
 
                             angular.element(scope.menuContent).append(el);
 
