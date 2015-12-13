@@ -5,7 +5,8 @@
   "author": "Mahmut Duva <mahmutduva@gmail.com>",
   "description": "Angularjs side menu",
   "main": [
-    "dist/aside-menu.js"
+    "dist/aside-menu.js",
+    "dist/aside-menu.css"
   ],
   "keywords": [
     "angularjs",
