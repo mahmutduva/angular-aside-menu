@@ -5,34 +5,53 @@
     <title>Demo Aside Menu</title>
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="../dist/aside-menu.css">
 </head>
 <body>
-    <aside-menu side="left" width="400" is-backdrop="true">
-        <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-    </aside-menu>
-    <aside-menu side="right" width="240" is-backdrop="false">
-        <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
-        </ul>
-    </aside-menu>
-    <aside-menu-content>
-        <div style="display: table; margin: 200px auto">
-            <button type="button" aside-menu-toggle="left" class="btn btn-default">Left</button>
-            <button type="button" aside-menu-toggle="right" class="btn btn-default">Right</button>
-        </div>
-    </aside-menu-content>
-
+<aside-menu id="sol1" side="left" width="400" is-backdrop="true" push="true">
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+</aside-menu>
+<aside-menu id="sol2" side="left" width="400" is-backdrop="true" push="false">
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+</aside-menu>
+<aside-menu id="sag1" side="right" width="240" is-backdrop="false" push="true">
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+</aside-menu>
+<aside-menu id="sag2" side="right" width="240" is-backdrop="false" push="false">
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+</aside-menu>
+<aside-menu-content>
+    <div style="display: table; margin: 200px auto">
+        <button type="button" aside-menu-toggle="sol1" class="btn btn-default">Left</button>
+        <button type="button" aside-menu-toggle="sol2" class="btn btn-default">Left</button>
+        <button type="button" aside-menu-toggle="sag1" class="btn btn-default">Right</button>
+        <button type="button" aside-menu-toggle="sag2" class="btn btn-default">Right</button>
+    </div>
+</aside-menu-content>
 
 
 </body>

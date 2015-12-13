@@ -39,31 +39,56 @@
 
                     var isOpen = false;
                     var menus = document.getElementsByTagName("aside-menu");
-                    var targetMenuWidth = 275;
+                    var targetMenu = {
+                        "width": 275,
+                        "isBackdrop": false
+                    };
 
                     elem.bind('click', function () {
-                        var menuContent = document.getElementsByClassName("aside-menu-content");
-                        angular.forEach(menus,function(item){
-                            if(angular.element(item).attr("side") == attrs.asideMenuToggle){
-                                targetMenuWidth = angular.element(item).attr("width");
-                                console.log(targetMenuWidth);
 
+                        var menuContent = document.getElementsByClassName("aside-menu-content");
+
+                        angular.forEach(menus, function (item) {
+                            if (angular.element(item).attr("id") == attrs.asideMenuToggle) {
+                                targetMenu.item = angular.element(item);
+                                targetMenu.width = angular.element(item).attr("width");
+                                targetMenu.side = angular.element(item).attr("side");
+                                targetMenu.push = angular.element(item).attr("push");
                             }
                         });
-                        if(!isOpen){
-                            if (attrs.asideMenuToggle == "left") {
-                                angular.element(menuContent).css("transform", "translate3d("+targetMenuWidth+"px, 0px, 0px)");
-                                isOpen = true;
+
+                        if (!isOpen) {
+                            if (targetMenu.side == "left") {
+                                if (targetMenu.push == "true") {
+                                    angular.element(menuContent).css("transform", "translate3d(" + targetMenu.width + "px, 0px, 0px)");
+                                }
+                                else {
+                                    targetMenu.item.css("transform", "translate3d(" + targetMenu.width + "px, 0px, 0px)");
+                                }
 
                             }
-                            else if(attrs.asideMenuToggle == "right"){
-                                angular.element(menuContent).css("transform", "translate3d(-"+targetMenuWidth+"px, 0px, 0px)");
-                                isOpen = true;
+                            else if (targetMenu.side == "right") {
+                                if (targetMenu.push == "true") {
+                                    angular.element(menuContent).css("transform", "translate3d(-" + targetMenu.width + "px, 0px, 0px)");
+
+                                }
+                                else {
+                                    targetMenu.item.css("transform", "translate3d(-" + targetMenu.width + "px, 0px, 0px)");
+                                }
 
                             }
+
+                            isOpen = true;
+
                         }
-                        else{
-                            angular.element(menuContent).css("transform", "translate3d(0px, 0px, 0px)");
+                        else {
+                            if (targetMenu.push == "true") {
+                                angular.element(menuContent).css("transform", "translate3d(0px, 0px, 0px)");
+
+                            }
+                            else {
+                                targetMenu.item.css("transform", "translate3d(0px, 0px, 0px)");
+                            }
                             isOpen = false;
                         }
 
@@ -77,12 +102,25 @@
             return {
                 restrict: 'EA',
                 link: function (scope, elem, attrs) {
-                    console.log(attrs)
-                    scope.side = attrs.side;
-                    scope.width = attrs.width;
-                    scope.isBackdrop = attrs.isBackdrop;
-                    angular.element(elem).addClass("aside-menu aside-menu-" + scope.side);
-                    angular.element(elem).css("width", scope.width + "px");
+                    angular.element(elem).addClass("aside-menu aside-menu-animate");
+                    angular.element(elem).css({
+                        "width": attrs.width + "px"
+                    });
+                    if (attrs.side == "left") {
+                        angular.element(elem).css("left", 0);
+                        if (attrs.push == "false") {
+                            angular.element(elem).css("z-index", "99");
+                            angular.element(elem).css("left", "-" + attrs.width + "px");
+                        }
+                    }
+                    else if (attrs.side == "right") {
+                        angular.element(elem).css("right", 0);
+                        if (attrs.push == "false") {
+                            angular.element(elem).css("z-index", "99");
+                            angular.element(elem).css("right", "-" + attrs.width + "px");
+                        }
+                    }
+
                 }
             };
         })
@@ -91,12 +129,12 @@
 
             return {
                 restrict: 'AE',
-                scope:true,
+                scope: true,
                 link: function (scope, elem, attrs) {
                     angular.element(elem).addClass('aside-menu-content aside-menu-animate');
                 }
             };
-        })
+        });
 
 
     return module

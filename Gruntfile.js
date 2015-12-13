@@ -61,7 +61,7 @@ module.exports = function(grunt) {
         files: [{
           expand: true,
           flatten: true,
-          src: ['src/aside-menu.js'],
+          src: ['src/aside-menu.js','src/aside-menu.css'],
           dest: 'dist/'
         }]
       }
@@ -90,10 +90,6 @@ module.exports = function(grunt) {
       js: {
         files: ['src/*js', 'src/*.html'],
         tasks: ['js']
-      },
-      less: {
-        files: ['src/*.less'],
-        tasks: ['css']
       }
     },
     serve: {
