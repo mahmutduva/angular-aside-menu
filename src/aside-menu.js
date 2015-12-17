@@ -40,7 +40,8 @@ var module = angular.module('asideModule', [])
                     "width": 275,
                     "side": "left",
                     "pushContentContent": false,
-                    "isBackdrop": false
+                    "isBackdrop": false,
+                    "squeeze": false
                 };
 
 
@@ -66,6 +67,7 @@ var module = angular.module('asideModule', [])
                             scope.targetMenu.side = angular.element(item).attr("side");
                             scope.targetMenu.pushContent = angular.element(item).attr("push-content");
                             scope.targetMenu.isBackdrop = angular.element(item).attr("is-backdrop");
+                            scope.targetMenu.squeeze = angular.element(item).attr("squeeze");
                         }
 
 
@@ -92,6 +94,15 @@ var module = angular.module('asideModule', [])
 
 
                             }
+
+                            if (scope.targetMenu.squeeze == "true") {
+
+
+                                angular.element(scope.menuContent).css("width", "calc( 100% - " + scope.targetMenu.width + "px )");
+
+
+                            }
+
                         }
                         else if (scope.targetMenu.side == "right") {
 
@@ -107,6 +118,14 @@ var module = angular.module('asideModule', [])
 
 
                                 scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + "px, 0px, 0px)");
+
+
+                            }
+
+                            if (scope.targetMenu.squeeze == "true") {
+
+
+                                angular.element(scope.menuContent).css("width", "calc( 100% - " + scope.targetMenu.width + "px )");
 
 
                             }
@@ -143,6 +162,14 @@ var module = angular.module('asideModule', [])
 
                         }
 
+                        if (scope.targetMenu.squeeze == "true") {
+
+
+                            angular.element(scope.menuContent).css("width", "100%");
+
+
+                        }
+                        
                         scope.isOpen = false;
                     }
 
