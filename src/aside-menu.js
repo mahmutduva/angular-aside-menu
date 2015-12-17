@@ -98,7 +98,7 @@ var module = angular.module('asideModule', [])
                             if (scope.targetMenu.squeeze == "true") {
 
 
-                                angular.element(scope.menuContent).css("width", "calc( 100% - " + scope.targetMenu.width + "px )");
+                                angular.element(scope.menuContent).animate({width: "-=" + scope.targetMenu.width}, 300);
 
 
                             }
@@ -125,7 +125,7 @@ var module = angular.module('asideModule', [])
                             if (scope.targetMenu.squeeze == "true") {
 
 
-                                angular.element(scope.menuContent).css("width", "calc( 100% - " + scope.targetMenu.width + "px )");
+                                angular.element(scope.menuContent).animate({width: "-=" + scope.targetMenu.width}, 300);
 
 
                             }
@@ -165,7 +165,7 @@ var module = angular.module('asideModule', [])
                         if (scope.targetMenu.squeeze == "true") {
 
 
-                            angular.element(scope.menuContent).css("width", "100%");
+                                angular.element(scope.menuContent).animate({width: "+=" + scope.targetMenu.width}, 300);
 
 
                         }
