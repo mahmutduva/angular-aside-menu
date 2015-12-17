@@ -1,3 +1,5 @@
+###[Live Demo](http://plnkr.co/edit/Q0WNFYmqrGSB6QKQtCp3?p=preview)
+
 # angular-aside-menu
 Side menu for website
 
