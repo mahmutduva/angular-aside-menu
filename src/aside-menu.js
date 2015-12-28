@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v1.1.0
+ * Version: v1.2.0
  *
  * Licensed under the MIT license
  */
@@ -14,7 +14,7 @@
 var module = angular.module('asideModule', [])
 
 
-    .directive('asideMenuToggle', function ($compile) {
+    .directive('asideMenuToggle', ['$compile', function ($compile) {
         'use strict';
 
         return {
@@ -47,7 +47,6 @@ var module = angular.module('asideModule', [])
 
                 // Click Event
                 elem.bind('click', function () {
-
                     // reset menu content transform
                     angular.element(scope.menuContent).css("transform", "translate3d(0px, 0px, 0px)");
 
@@ -57,7 +56,9 @@ var module = angular.module('asideModule', [])
 
 
                         // Close menu
-                        angular.element(item).css("transform", "translate3d(0px, 0px, 0px)");
+                        if(!angular.element(item).attr("fixed")){
+                            angular.element(item).css("transform", "translate3d(0px, 0px, 0px)");
+                        }
 
 
                         // Get target menu options from attrs
@@ -68,13 +69,23 @@ var module = angular.module('asideModule', [])
                             scope.targetMenu.pushContent = angular.element(item).attr("push-content");
                             scope.targetMenu.isBackdrop = angular.element(item).attr("is-backdrop");
                             scope.targetMenu.squeeze = angular.element(item).attr("squeeze");
+
+                            if(angular.element(item).attr("open")){
+                                angular.element(item).attr("open",false);
+                            }
+                            else{
+                                angular.element(item).attr("open",true);
+                            }
+
+                            scope.targetMenu.open = angular.element(item).attr("open");
+
                         }
 
 
                     });
 
 
-                    if (!scope.isOpen) {
+                    if (scope.targetMenu.open) {
 
 
                         if (scope.targetMenu.side == "left") {
@@ -141,11 +152,12 @@ var module = angular.module('asideModule', [])
 
                         }
 
-                        scope.isOpen = true;
+                        //scope.isOpen = true;
 
                     }
                     else {
 
+                        debugger
 
                         if (scope.targetMenu.pushContent == "true") {
 
@@ -165,18 +177,18 @@ var module = angular.module('asideModule', [])
                         if (scope.targetMenu.squeeze == "true") {
 
 
-                                angular.element(scope.menuContent).animate({width: "+=" + scope.targetMenu.width}, 300);
+                            angular.element(scope.menuContent).animate({width: "+=" + scope.targetMenu.width}, 300);
 
 
                         }
-                        
-                        scope.isOpen = false;
+
+                        //scope.isOpen = false;
                     }
 
                 });
             }
         };
-    })
+    }])
 
 
     .directive('asideMenu', function () {
@@ -264,11 +276,8 @@ var module = angular.module('asideModule', [])
 
 
                     angular.element(scope.menuContent).css("transform", "translate3d(0px, 0px, 0px)");
-
                     scope.targetMenu.item.css("transform", "translate3d( 0px, 0px, 0px)");
-
-                    scope.isOpen = false;
-
+                    angular.element(scope.targetMenu.item).attr("open",false);
                     elem.remove();
 
 
