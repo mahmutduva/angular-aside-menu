@@ -157,7 +157,6 @@ var module = angular.module('asideModule', [])
                     }
                     else {
 
-                        debugger
 
                         if (scope.targetMenu.pushContent == "true") {
 
