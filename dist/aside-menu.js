@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v1.2.0
+ * Version: v1.2.1
  *
  * Licensed under the MIT license
  */
@@ -125,13 +125,13 @@ var module = angular.module('asideModule', [])
 
 
                             }
-                            else {
-
-
-                                scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + "px, 0px, 0px)");
-
-
-                            }
+                            //else {
+                            //
+                            //
+                            //    scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + "px, 0px, 0px)");
+                            //
+                            //
+                            //}
 
                             if (scope.targetMenu.squeeze == "true") {
 

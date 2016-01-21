@@ -30,8 +30,8 @@ aside-menu{
     z-index: 1;
 }
 .aside-menu-animate{
-    -webkit-transition: -webkit-transform 200ms ease;
-    transition: transform 200ms ease;
+    -webkit-transition: -webkit-transform 400ms ease;
+    transition: transform 400ms ease;
 }
 
 .aside-back-drop{
