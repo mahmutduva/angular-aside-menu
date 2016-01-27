@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v1.2.1
+ * Version: v1.3
  *
  * Licensed under the MIT license
  */
@@ -48,7 +48,7 @@ var module = angular.module('asideModule', [])
                 // Click Event
                 elem.bind('click', function () {
                     // reset menu content transform
-                    angular.element(scope.menuContent).css("transform", "translate3d(0px, 0px, 0px)");
+                    angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");
 
 
                     // List all menus
@@ -57,7 +57,7 @@ var module = angular.module('asideModule', [])
 
                         // Close menu
                         if(!angular.element(item).attr("fixed")){
-                            angular.element(item).css("transform", "translate3d(0px, 0px, 0px)");
+                            angular.element(item).css("transform", "translate3d(0, 0, 0)");
                         }
 
 
@@ -94,14 +94,14 @@ var module = angular.module('asideModule', [])
                             if (scope.targetMenu.pushContent == "true") {
 
 
-                                angular.element(scope.menuContent).css("transform", "translate3d(" + scope.targetMenu.width + "px, 0px, 0px)");
+                                angular.element(scope.menuContent).css("transform", "translate3d(" + scope.targetMenu.width + ", 0, 0)");
 
 
                             }
                             else {
 
 
-                                scope.targetMenu.item.css("transform", "translate3d(" + scope.targetMenu.width + "px, 0px, 0px)");
+                                scope.targetMenu.item.css("transform", "translate3d(" + scope.targetMenu.width + ", 0, 0)");
 
 
                             }
@@ -121,14 +121,14 @@ var module = angular.module('asideModule', [])
                             if (scope.targetMenu.pushContent == "true") {
 
 
-                                angular.element(scope.menuContent).css("transform", "translate3d(-" + scope.targetMenu.width + "px, 0px, 0px)");
+                                angular.element(scope.menuContent).css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");
 
 
                             }
                             //else {
                             //
                             //
-                            //    scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + "px, 0px, 0px)");
+                            //    scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");
                             //
                             //
                             //}
@@ -161,14 +161,14 @@ var module = angular.module('asideModule', [])
                         if (scope.targetMenu.pushContent == "true") {
 
 
-                            angular.element(scope.menuContent).css("transform", "translate3d(0px, 0px, 0px)");
+                            angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");
 
 
                         }
                         else {
 
 
-                            scope.targetMenu.item.css("transform", "translate3d(0px, 0px, 0px)");
+                            scope.targetMenu.item.css("transform", "translate3d(0, 0, 0)");
 
 
                         }
@@ -200,7 +200,7 @@ var module = angular.module('asideModule', [])
                 angular.element(elem).addClass("aside-menu aside-menu-animate");
 
 
-                angular.element(elem).css({"width": attrs.width + "px"});
+                angular.element(elem).css({"width": attrs.width});
 
 
                 if (attrs.side == "left") {
@@ -214,7 +214,7 @@ var module = angular.module('asideModule', [])
 
                         angular.element(elem).css("z-index", "99");
 
-                        angular.element(elem).css("left", "-" + attrs.width + "px");
+                        angular.element(elem).css("left", "-" + attrs.width);
 
 
                     }
@@ -232,7 +232,7 @@ var module = angular.module('asideModule', [])
 
                         angular.element(elem).css("z-index", "99");
 
-                        angular.element(elem).css("right", "-" + attrs.width + "px");
+                        angular.element(elem).css("right", "-" + attrs.width);
 
 
                     }
@@ -274,8 +274,8 @@ var module = angular.module('asideModule', [])
                 elem.bind('click', function () {
 
 
-                    angular.element(scope.menuContent).css("transform", "translate3d(0px, 0px, 0px)");
-                    scope.targetMenu.item.css("transform", "translate3d( 0px, 0px, 0px)");
+                    angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");
+                    scope.targetMenu.item.css("transform", "translate3d( 0, 0, 0)");
                     angular.element(scope.targetMenu.item).attr("open",false);
                     elem.remove();
 
