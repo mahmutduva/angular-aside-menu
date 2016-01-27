@@ -17,7 +17,7 @@ angular.module('yourApp', ['asideModule']);
 ### Example
 
 ```html
-<aside-menu id="menu-1" side="left" width="400" is-backdrop="true" push-content="false">
+<aside-menu id="menu-1" side="left" width="400px" is-backdrop="true" push-content="false">
     <ul class="list-group">
         <li class="list-group-item">Cras justo odio</li>
         <li class="list-group-item">Dapibus ac facilisis in</li>
