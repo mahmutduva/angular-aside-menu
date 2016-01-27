@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v1.2.1
+ * Version: v1.3
  *
  * Licensed under the MIT license
  */
