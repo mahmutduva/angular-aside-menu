@@ -19,9 +19,7 @@
     "bower_components"
   ],
   "devDependencies": {
-    "angular": "~1.4.8"
-  },
-  "dependencies": {
+    "angular": "~1.4.8",
     "bootstrap": "~3.3.6"
   }
 }
