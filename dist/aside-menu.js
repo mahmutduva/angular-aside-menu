@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v1.3.0
+ * Version: v1.3.3
  *
  * Licensed under the MIT license
  */
@@ -47,6 +47,7 @@ var module = angular.module('asideModule', [])
 
                 // Click Event
                 elem.bind('click', function () {
+                    
                     // reset menu content transform
                     angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");
 
@@ -90,7 +91,6 @@ var module = angular.module('asideModule', [])
 
                         if (scope.targetMenu.side == "left") {
 
-
                             if (scope.targetMenu.pushContent == "true") {
 
 
@@ -101,7 +101,7 @@ var module = angular.module('asideModule', [])
                             else {
 
 
-                                scope.targetMenu.item.css("transform", "translate3d(" + scope.targetMenu.width + ", 0, 0)");
+                                scope.targetMenu.item.css("transform", "translate3d( 100%, 0, 0)");
 
 
                             }
@@ -117,7 +117,6 @@ var module = angular.module('asideModule', [])
                         }
                         else if (scope.targetMenu.side == "right") {
 
-
                             if (scope.targetMenu.pushContent == "true") {
 
 
@@ -125,13 +124,13 @@ var module = angular.module('asideModule', [])
 
 
                             }
-                            //else {
-                            //
-                            //
-                            //    scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");
-                            //
-                            //
-                            //}
+                            else {
+
+
+                               scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");
+
+
+                            }
 
                             if (scope.targetMenu.squeeze == "true") {
 
