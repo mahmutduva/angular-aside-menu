@@ -1,4 +1,25 @@
 {
+  "author": "Mahmut Duva <mahmutduva@gmail.com>",
+  "license": "MIT",
+  "name": "angular-aside-menu",
+  "description": "# angular-aside-menu Side menu for website",
+  "version": "1.3.3",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mahmutduva/angular-aside-menu.git"
+  },
+  "keywords": [
+    "angularjs",
+    "aside",
+    "menu"
+  ],
+  "bugs": {
+    "url": "https://github.com/mahmutduva/angular-aside-menu/issues"
+  },
+  "homepage": "https://github.com/mahmutduva/angular-aside-menu#readme",
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-angular-templates": "^0.5.7",
@@ -10,8 +31,6 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-serve": "^0.1.6",
     "recess": "~1.1.9"
-  },
-  "author": "Mahmut Duva <mahmutduva@gmail.com>",
-  "license": "MIT",
-  "readmeFilename": "README.md"
+  }
 }
+
