@@ -9,6 +9,11 @@ Side menu for website
 $ bower install --save angular-aside-menu
 ```
 
+### NPM
+```
+$ npm install --save angular-aside-menu
+```
+
 ### Module
 ```javascript
 angular.module('yourApp', ['asideModule']);
