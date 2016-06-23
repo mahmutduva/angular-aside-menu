@@ -6,6 +6,28 @@
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
     <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../dist/aside-menu.css">
+    <style>
+        div.pre{
+            background-color: #f5f5f5;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: inline-block;
+            padding: 10px 30px;
+        }
+        xmp{
+            display: inline-block;
+            margin: 0;
+            padding: 0;
+            font-size: 11px;
+        }
+        button{ margin-top: 50px}
+        .description{
+            display: inline-block;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .center-block{text-align: center}
+    </style>
 </head>
 <body>
 <aside-menu id="sol1" side="left" width="400px" is-backdrop="true" push-content="true">
@@ -45,12 +67,43 @@
     </ul>
 </aside-menu>
 <aside-menu-content>
-    <div style="display: table; margin: 200px auto">
-        <button type="button" aside-menu-toggle="sol1" class="btn btn-default">Left</button>
-        <button type="button" aside-menu-toggle="sol2" class="btn btn-default">Left</button>
-        <button type="button" aside-menu-toggle="sag1" class="btn btn-default">Right</button>
-        <button type="button" aside-menu-toggle="sag2" class="btn btn-default">Right</button>
-    </div>
+
+        <fieldset>
+            <div class="center-block">
+                <button type="button" aside-menu-toggle="sol1" class="btn btn-default">Left Menu (Push Content & Backdrop)</button>
+                <p class="description"></p>
+                <div class="pre">
+                    <xmp><aside-menu side="left" width="400px" is-backdrop="true" push-content="true"></aside-menu></xmp>
+                </div>
+            </div>
+
+            <div class="center-block">
+                <button type="button" aside-menu-toggle="sol2" class="btn btn-default center-block">Left Menu (Backdrop)</button>
+                <p class="description"></p>
+                <div class="pre">
+                    <xmp><aside-menu side="left" width="400px" is-backdrop="true" push-content="false"></aside-menu></xmp>
+                </div>
+            </div>
+
+            <div class="center-block">
+                <button type="button" aside-menu-toggle="sag1" class="btn btn-default center-block">Right Menu (Push Content)</button>
+                <p class="description"></p>
+
+                <div class="pre">
+                    <xmp><aside-menu side="right" width="240px" is-backdrop="false" push-content="true"></aside-menu></xmp>
+                </div>
+            </div>
+
+            <div class="center-block">
+                <button type="button" aside-menu-toggle="sag2" class="btn btn-default center-block">Right Menu</button>
+                <p class="description"></p>
+                <div class="pre">
+                    <xmp><aside-menu side="right" width="240px" is-backdrop="false" push-content="false"></aside-menu></xmp>
+                </div>
+            </div>
+
+        </fieldset>
+
 </aside-menu-content>
 
 <script src="../bower_components/angular/angular.js"></script>
