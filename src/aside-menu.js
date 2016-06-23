@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v1.4.0
+ * Version: v1.4.1
  *
  * Licensed under the MIT license
  */
@@ -71,10 +71,12 @@ var module = angular.module('asideModule', [])
 
                             if (angular.element(item).attr("open")) {
                                 angular.element(item).attr("open", false);
+                                scope.$emit('getMenuState', false);
+
                             }
                             else {
                                 angular.element(item).attr("open", true);
-                                angular.element(item).addClass('open');
+                                scope.$emit('getMenuState', true);
                             }
 
                             scope.targetMenu.open = angular.element(item).attr("open");
@@ -245,6 +247,7 @@ var module = angular.module('asideModule', [])
                     angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");
                     scope.targetMenu.item.css("transform", "translate3d( 0, 0, 0)");
                     angular.element(scope.targetMenu.item).attr("open", false);
+                    scope.$emit('getMenuState', false);
                     elem.remove();
 
 

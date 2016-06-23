@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Aside Menu</title>
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../dist/aside-menu.css">
+    <link rel="stylesheet" href="hamburger-menu.css">
+</head>
+<body ng-controller="hamburgerMenuController as _menu">
+<aside-menu id="left-menu" side="left" width="400px" is-backdrop="false" push-content="true">
+    <ul class="list-group">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Morbi leo risus</li>
+        <li class="list-group-item">Porta ac consectetur ac</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+</aside-menu>
+<aside-menu-content>
+    <header>
+        <div id="nav-icon" aside-menu-toggle="left-menu" ng-class="{'open': _menu.opened}">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <h1>Lorem Lorem</h1>
+    </header>
+
+    <div class="content">
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus nisi augue, gravida sit amet porta non,
+            blandit congue est. Fusce at ornare sapien. Phasellus scelerisque efficitur orci quis mattis. Morbi
+            tristique tempor nisl laoreet vestibulum. Cras id placerat libero. Aliquam faucibus porttitor rutrum. Ut
+            lorem diam, tincidunt quis laoreet sed, gravida vel tortor. Cras tincidunt viverra nisl, consequat hendrerit
+            lorem blandit ut. Nullam facilisis mollis justo efficitur malesuada. Etiam efficitur tortor nec pellentesque
+            ultricies. Aenean ultricies vitae elit sodales aliquet. Sed dignissim pellentesque magna, vitae elementum
+            nisi vestibulum sit amet.</p>
+
+        <p>Curabitur pellentesque condimentum dolor vitae sollicitudin. Donec ac iaculis purus, sollicitudin bibendum
+            risus. Quisque congue, felis non aliquam condimentum, mi sapien efficitur nisl, a fermentum magna odio at
+            felis. Aenean metus dolor, hendrerit et rutrum vitae, molestie eget velit. Duis at aliquam lorem. Integer
+            interdum at nulla sed tempor. Sed nec ipsum nec purus convallis sodales. Integer bibendum fringilla aliquet.
+            Pellentesque tincidunt ut nunc in elementum. Pellentesque facilisis tincidunt tellus, quis placerat risus
+            ultricies in. Donec id hendrerit lectus, faucibus molestie odio. Quisque sit amet ligula elit. Sed
+            condimentum ipsum eget metus dignissim efficitur. In scelerisque erat porttitor nunc hendrerit congue.</p>
+
+        <p>Maecenas consectetur commodo odio non congue. Curabitur egestas sit amet est in consectetur. Ut eleifend ante
+            non pretium molestie. Morbi ut elit pellentesque risus auctor convallis. Nullam bibendum tortor elementum
+            orci faucibus, at tincidunt nisi convallis. Nullam varius enim id orci dapibus, quis auctor augue pharetra.
+            Suspendisse elementum sollicitudin volutpat. Fusce pulvinar commodo velit, ac imperdiet turpis consectetur
+            vel. Ut a vehicula urna, vitae fermentum dolor. Morbi in facilisis nibh, in porta nisi. Integer magna nulla,
+            commodo et interdum sed, eleifend nec sapien. Sed pellentesque mauris libero, eu accumsan tortor luctus nec.
+            Duis maximus nibh id sem efficitur, non mollis dui congue. Aliquam a tincidunt purus, ac vestibulum
+            odio.</p>
+
+        <p>Fusce lobortis in leo in commodo. Fusce non nunc lectus. Nullam vel mi diam. Praesent eget fringilla tortor,
+            nec interdum eros. Quisque porttitor sem at quam condimentum rhoncus. Aenean pretium enim vitae dapibus
+            tempus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            Vivamus pulvinar ante a enim condimentum, eget sagittis lorem porta. Duis semper accumsan sapien, ac
+            condimentum eros volutpat ac. Nam viverra mauris ut leo lobortis sodales. Fusce pulvinar pulvinar neque et
+            elementum. Maecenas rutrum semper dolor, ac placerat mi semper et. Etiam mauris nisl, laoreet nec lectus ut,
+            ornare sodales eros. Vestibulum interdum est lacus, quis ullamcorper dolor elementum sed.</p>
+    </div>
+
+</aside-menu-content>
+
+<script src="../bower_components/angular/angular.js"></script>
+<script src="../dist/aside-menu.js"></script>
+<script src="app.js"></script>
+
+</body>
+
+</html>
