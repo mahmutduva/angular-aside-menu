@@ -4,7 +4,7 @@
  * (c) Mahmut Duva <mahmutduva@gmail.com>
  * https://github.com/mahmutduva/angular-aside-menu
  *
- * Version: v1.3.3
+ * Version: v1.4.0
  *
  * Licensed under the MIT license
  */
@@ -40,14 +40,13 @@ var module = angular.module('asideModule', [])
                     "width": 275,
                     "side": "left",
                     "pushContentContent": false,
-                    "isBackdrop": false,
-                    "squeeze": false
+                    "isBackdrop": false
                 };
 
 
                 // Click Event
                 elem.bind('click', function () {
-                    
+
                     // reset menu content transform
                     angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");
 
@@ -57,7 +56,7 @@ var module = angular.module('asideModule', [])
 
 
                         // Close menu
-                        if(!angular.element(item).attr("fixed")){
+                        if (!angular.element(item).attr("fixed")) {
                             angular.element(item).css("transform", "translate3d(0, 0, 0)");
                         }
 
@@ -69,13 +68,13 @@ var module = angular.module('asideModule', [])
                             scope.targetMenu.side = angular.element(item).attr("side");
                             scope.targetMenu.pushContent = angular.element(item).attr("push-content");
                             scope.targetMenu.isBackdrop = angular.element(item).attr("is-backdrop");
-                            scope.targetMenu.squeeze = angular.element(item).attr("squeeze");
 
-                            if(angular.element(item).attr("open")){
-                                angular.element(item).attr("open",false);
+                            if (angular.element(item).attr("open")) {
+                                angular.element(item).attr("open", false);
                             }
-                            else{
-                                angular.element(item).attr("open",true);
+                            else {
+                                angular.element(item).attr("open", true);
+                                angular.element(item).addClass('open');
                             }
 
                             scope.targetMenu.open = angular.element(item).attr("open");
@@ -99,20 +98,10 @@ var module = angular.module('asideModule', [])
 
                             }
                             else {
-
-
                                 scope.targetMenu.item.css("transform", "translate3d( 100%, 0, 0)");
 
-
                             }
 
-                            if (scope.targetMenu.squeeze == "true") {
-
-
-                                angular.element(scope.menuContent).animate({width: "-=" + scope.targetMenu.width}, 300);
-
-
-                            }
 
                         }
                         else if (scope.targetMenu.side == "right") {
@@ -125,20 +114,10 @@ var module = angular.module('asideModule', [])
 
                             }
                             else {
-
-
-                               scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");
-
+                                scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");
 
                             }
 
-                            if (scope.targetMenu.squeeze == "true") {
-
-
-                                angular.element(scope.menuContent).animate({width: "-=" + scope.targetMenu.width}, 300);
-
-
-                            }
 
                         }
                         if (scope.targetMenu.isBackdrop == "true") {
@@ -151,7 +130,6 @@ var module = angular.module('asideModule', [])
 
                         }
 
-                        //scope.isOpen = true;
 
                     }
                     else {
@@ -172,15 +150,6 @@ var module = angular.module('asideModule', [])
 
                         }
 
-                        if (scope.targetMenu.squeeze == "true") {
-
-
-                            angular.element(scope.menuContent).animate({width: "+=" + scope.targetMenu.width}, 300);
-
-
-                        }
-
-                        //scope.isOpen = false;
                     }
 
                 });
@@ -275,7 +244,7 @@ var module = angular.module('asideModule', [])
 
                     angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");
                     scope.targetMenu.item.css("transform", "translate3d( 0, 0, 0)");
-                    angular.element(scope.targetMenu.item).attr("open",false);
+                    angular.element(scope.targetMenu.item).attr("open", false);
                     elem.remove();
 
 
