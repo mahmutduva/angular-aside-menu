@@ -11,9 +11,8 @@
 
 
 'use strict';
-var module = angular.module('asideModule', [])
-
-
+angular
+    .module('asideModule', [])
     .directive('asideMenuToggle', ['$compile', function ($compile) {
         'use strict';
 

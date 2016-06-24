@@ -1,0 +1,845 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for src/aside-menu.js</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">src/</a> aside-menu.js
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.67% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>7/60</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">7.14% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>2/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">18.18% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>2/11</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.67% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>7/60</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">/**
+ * Angular JS aside menu directive
+ *
+ * (c) Mahmut Duva &lt;mahmutduva@gmail.com&gt;
+ * https://github.com/mahmutduva/angular-aside-menu
+ *
+ * Version: v1.4.1
+ *
+ * Licensed under the MIT license
+ */
+&nbsp;
+&nbsp;
+'use strict';
+angular
+    .module('asideModule', [])
+    .directive('asideMenuToggle', ['$compile', <span class="fstat-no" title="function not covered" >function ($compile) {</span>
+        'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'EA',
+            link: <span class="fstat-no" title="function not covered" >function (scope, elem, attrs) {</span>
+&nbsp;
+&nbsp;
+                // is open menu
+<span class="cstat-no" title="statement not covered" >                scope.isOpen = false;</span>
+&nbsp;
+&nbsp;
+                // All Menus
+<span class="cstat-no" title="statement not covered" >                scope.menus = document.getElementsByTagName("aside-menu");</span>
+&nbsp;
+&nbsp;
+                // Menu Content
+<span class="cstat-no" title="statement not covered" >                scope.menuContent = document.getElementsByClassName("aside-menu-content");</span>
+&nbsp;
+&nbsp;
+                // Default menu Options
+<span class="cstat-no" title="statement not covered" >                scope.targetMenu = {</span>
+                    "item": null,
+                    "width": 275,
+                    "side": "left",
+                    "pushContentContent": false,
+                    "isBackdrop": false
+                };
+&nbsp;
+&nbsp;
+                // Click Event
+<span class="cstat-no" title="statement not covered" >                elem.bind('click', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+                    // reset menu content transform
+<span class="cstat-no" title="statement not covered" >                    angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");</span>
+&nbsp;
+&nbsp;
+                    // List all menus
+<span class="cstat-no" title="statement not covered" >                    angular.forEach(scope.menus, <span class="fstat-no" title="function not covered" >function (item) {</span></span>
+&nbsp;
+&nbsp;
+                        // Close menu
+<span class="cstat-no" title="statement not covered" >                        if (!angular.element(item).attr("fixed")) {</span>
+<span class="cstat-no" title="statement not covered" >                            angular.element(item).css("transform", "translate3d(0, 0, 0)");</span>
+                        }
+&nbsp;
+&nbsp;
+                        // Get target menu options from attrs
+<span class="cstat-no" title="statement not covered" >                        if (angular.element(item).attr("id") == attrs.asideMenuToggle) {</span>
+<span class="cstat-no" title="statement not covered" >                            scope.targetMenu.item = angular.element(item);</span>
+<span class="cstat-no" title="statement not covered" >                            scope.targetMenu.width = angular.element(item).attr("width");</span>
+<span class="cstat-no" title="statement not covered" >                            scope.targetMenu.side = angular.element(item).attr("side");</span>
+<span class="cstat-no" title="statement not covered" >                            scope.targetMenu.pushContent = angular.element(item).attr("push-content");</span>
+<span class="cstat-no" title="statement not covered" >                            scope.targetMenu.isBackdrop = angular.element(item).attr("is-backdrop");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            if (angular.element(item).attr("open")) {</span>
+<span class="cstat-no" title="statement not covered" >                                angular.element(item).attr("open", false);</span>
+<span class="cstat-no" title="statement not covered" >                                scope.$emit('getMenuState', false);</span>
+&nbsp;
+                            }
+                            else {
+<span class="cstat-no" title="statement not covered" >                                angular.element(item).attr("open", true);</span>
+<span class="cstat-no" title="statement not covered" >                                scope.$emit('getMenuState', true);</span>
+                            }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            scope.targetMenu.open = angular.element(item).attr("open");</span>
+&nbsp;
+                        }
+&nbsp;
+&nbsp;
+                    });
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (scope.targetMenu.open) {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        if (scope.targetMenu.side == "left") {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            if (scope.targetMenu.pushContent == "true") {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                                angular.element(scope.menuContent).css("transform", "translate3d(" + scope.targetMenu.width + ", 0, 0)");</span>
+&nbsp;
+&nbsp;
+                            }
+                            else {
+<span class="cstat-no" title="statement not covered" >                                scope.targetMenu.item.css("transform", "translate3d( 100%, 0, 0)");</span>
+&nbsp;
+                            }
+&nbsp;
+&nbsp;
+                        }
+                        else <span class="cstat-no" title="statement not covered" >if (scope.targetMenu.side == "right") {</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            if (scope.targetMenu.pushContent == "true") {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                                angular.element(scope.menuContent).css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");</span>
+&nbsp;
+&nbsp;
+                            }
+                            else {
+<span class="cstat-no" title="statement not covered" >                                scope.targetMenu.item.css("transform", "translate3d(-" + scope.targetMenu.width + ", 0, 0)");</span>
+&nbsp;
+                            }
+&nbsp;
+&nbsp;
+                        }
+<span class="cstat-no" title="statement not covered" >                        if (scope.targetMenu.isBackdrop == "true") {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            var el = $compile('&lt;div close-aside-menu class="aside-back-drop in"&gt;&lt;/div&gt;')(scope);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            angular.element(scope.menuContent).append(el);</span>
+&nbsp;
+&nbsp;
+                        }
+&nbsp;
+&nbsp;
+                    }
+                    else {
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        if (scope.targetMenu.pushContent == "true") {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");</span>
+&nbsp;
+&nbsp;
+                        }
+                        else {
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                            scope.targetMenu.item.css("transform", "translate3d(0, 0, 0)");</span>
+&nbsp;
+&nbsp;
+                        }
+&nbsp;
+                    }
+&nbsp;
+                });
+            }
+        };
+    }])
+&nbsp;
+&nbsp;
+    .directive('asideMenu', function () {
+        'use strict';
+&nbsp;
+        return {
+            restrict: 'EA',
+            link: function (scope, elem, attrs) {
+&nbsp;
+                angular.element(elem).addClass("aside-menu aside-menu-animate");
+&nbsp;
+&nbsp;
+                angular.element(elem).css({"width": attrs.width});
+&nbsp;
+&nbsp;
+                <span class="missing-if-branch" title="else path not taken" >E</span>if (attrs.side == "left") {
+&nbsp;
+&nbsp;
+                    angular.element(elem).css("left", 0);
+&nbsp;
+&nbsp;
+                    <span class="missing-if-branch" title="if path not taken" >I</span>if (attrs.pushContent == "false") {
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        angular.element(elem).css("z-index", "99");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        angular.element(elem).css("left", "-" + attrs.width);</span>
+&nbsp;
+&nbsp;
+                    }
+&nbsp;
+&nbsp;
+                }
+                else <span class="cstat-no" title="statement not covered" >if (attrs.side == "right") {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    angular.element(elem).css("right", 0);</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    if (attrs.pushContent == "false") {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        angular.element(elem).css("z-index", "99");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                        angular.element(elem).css("right", "-" + attrs.width);</span>
+&nbsp;
+&nbsp;
+                    }
+&nbsp;
+&nbsp;
+                }
+&nbsp;
+&nbsp;
+            }
+        };
+    })
+&nbsp;
+&nbsp;
+    .directive('asideMenuContent', <span class="fstat-no" title="function not covered" >function () {</span>
+        'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'AE',
+            scope: true,
+            link: <span class="fstat-no" title="function not covered" >function (scope, elem, attrs) {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                angular.element(elem).addClass('aside-menu-content aside-menu-animate close-aside-menu');</span>
+&nbsp;
+&nbsp;
+            }
+        };
+    })
+&nbsp;
+&nbsp;
+    .directive('closeAsideMenu', <span class="fstat-no" title="function not covered" >function () {</span>
+        'use strict';
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return {</span>
+            restrict: 'AC',
+            link: <span class="fstat-no" title="function not covered" >function (scope, elem, attrs) {</span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                elem.bind('click', <span class="fstat-no" title="function not covered" >function () {</span></span>
+&nbsp;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >                    angular.element(scope.menuContent).css("transform", "translate3d(0, 0, 0)");</span>
+<span class="cstat-no" title="statement not covered" >                    scope.targetMenu.item.css("transform", "translate3d( 0, 0, 0)");</span>
+<span class="cstat-no" title="statement not covered" >                    angular.element(scope.targetMenu.item).attr("open", false);</span>
+<span class="cstat-no" title="statement not covered" >                    scope.$emit('getMenuState', false);</span>
+<span class="cstat-no" title="statement not covered" >                    elem.remove();</span>
+&nbsp;
+&nbsp;
+                })
+&nbsp;
+&nbsp;
+            }
+        };
+    });
+&nbsp;
+&nbsp;
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Fri Jun 24 2016 15:10:07 GMT+0300 (EEST)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
