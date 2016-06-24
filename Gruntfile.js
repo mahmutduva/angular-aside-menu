@@ -24,52 +24,9 @@ module.exports = function(grunt) {
       }
     },
 
-    ngtemplates: {
-      app: {
-        src: 'src/**.html',
-        dest: 'temp/templates.js',
-        options: {
-          htmlmin: {
-            collapseBooleanAttributes: true,
-            collapseWhitespace: true,
-            removeAttributeQuotes: true,
-            removeComments: true, // Only if you don't use comment directives!
-            removeEmptyAttributes: true,
-            removeRedundantAttributes: true,
-            removeScriptTypeAttributes: true,
-            removeStyleLinkTypeAttributes: true
-          },
-          module: 'rzModule',
-          url: function(url) {
-            return url.replace('src/', '');
-          },
-          bootstrap: function(module, script) {
-            return 'module.run(function($templateCache) {\n' + script + '\n});';
-          }
-        }
-      }
-    },
-
-    replace: {
-      dist: {
-        options: {
-          patterns: [{
-            match: /\/\*templateReplacement\*\//,
-            replacement: '<%= grunt.file.read("temp/templates.js") %>'
-          }]
-        },
-        files: [{
-          expand: true,
-          flatten: true,
-          src: ['src/aside-menu.js','src/aside-menu.css'],
-          dest: 'dist/'
-        }]
-      }
-    },
-
     ngAnnotate: {
       options: {
-        singleQuotes: true,
+        singleQuotes: true
       },
       asidemenu: {
         files: [{
@@ -96,18 +53,24 @@ module.exports = function(grunt) {
       options: {
         port: 9000
       }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js',
+        singleRun: true
+      }
     }
 
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-angular-templates');
-  grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-serve');
+  grunt.loadNpmTasks('grunt-karma');
 
   grunt.registerTask('default', ['js']);
+  grunt.registerTask('test', ['karma']);
 
-  grunt.registerTask('js', ['ngtemplates', 'replace', 'ngAnnotate', 'uglify']);
+  grunt.registerTask('js', ['ngAnnotate', 'uglify']);
 };

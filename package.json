@@ -5,7 +5,8 @@
   "description": "# angular-aside-menu Side menu for website",
   "version": "1.4.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "grunt",
+    "test": "grunt test"
   },
   "repository": {
     "type": "git",
@@ -21,16 +22,32 @@
   },
   "homepage": "https://github.com/mahmutduva/angular-aside-menu#readme",
   "devDependencies": {
+    "angular": "1.4.7",
+    "angular-mocks": "1.4.7",
+    "chai": "^3.4.1",
+    "codecov.io": "^0.1.6",
+    "commitizen": "^2.4.6",
+    "cz-conventional-changelog": "^1.1.5",
     "grunt": "~0.4.2",
-    "grunt-angular-templates": "^0.5.7",
     "grunt-contrib-mincss": "~0.3.2",
     "grunt-contrib-uglify": "~0.2.2",
     "grunt-ng-annotate": "^1.0.1",
     "grunt-recess": "~0.4.0",
     "grunt-replace": "^0.11.0",
     "grunt-contrib-watch": "^0.6.1",
+    "grunt-karma": "^0.12.1",
     "grunt-serve": "^0.1.6",
-    "recess": "~1.1.9"
+    "karma": "^0.13.15",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.2",
+    "karma-coverage": "^0.5.3",
+    "karma-mocha": "^0.2.1",
+    "karma-phantomjs-launcher": "^0.2.1",
+    "karma-sinon": "^1.0.4",
+    "mocha": "^2.3.4",
+    "phantomjs": "^1.9.19",
+    "recess": "~1.1.9",
+    "sinon": "^1.17.2"
   }
 }
 
