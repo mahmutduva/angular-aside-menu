@@ -3,7 +3,7 @@
   "license": "MIT",
   "name": "angular-aside-menu",
   "description": "# angular-aside-menu Side menu for website",
-  "version": "1.4.1",
+  "version": "1.5.0",
   "scripts": {
     "build": "grunt",
     "test": "grunt test"
