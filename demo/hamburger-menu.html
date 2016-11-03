@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="hamburger-menu.css">
 </head>
 <body ng-controller="hamburgerMenuController as _menu">
-<aside-menu id="left-menu" side="left" width="400px" is-backdrop="false" push-content="true">
+<aside-menu id="left-menu" side="left" width="400px" is-backdrop="true" push-content="true">
     <ul class="list-group">
         <li class="list-group-item">Cras justo odio</li>
         <li class="list-group-item">Dapibus ac facilisis in</li>
         <li class="list-group-item">Morbi leo risus</li>
         <li class="list-group-item">Porta ac consectetur ac</li>
-        <li class="list-group-item">Vestibulum at eros</li>
+        <li class="list-group-item" aside-menu-toggle="left-menu">Vestibulum at eros</li>
     </ul>
 </aside-menu>
 <aside-menu-content>

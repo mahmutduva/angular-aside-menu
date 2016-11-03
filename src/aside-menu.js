@@ -151,6 +151,15 @@ angular
 
                         }
 
+                        if (scope.targetMenu.isBackdrop == "true") {
+
+                            var el = document.getElementsByClassName("aside-back-drop");
+
+                            angular.element(el).remove();
+
+
+                        }
+
                     }
 
                 });
