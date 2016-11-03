@@ -23,7 +23,16 @@ module.exports = function(grunt) {
         }
       }
     },
-
+    replace: {
+      dist: {
+        files: [{
+          expand: true,
+          flatten: true,
+          src: ['src/aside-menu.js','src/aside-menu.css'],
+          dest: 'dist/'
+        }]
+      }
+    },
     ngAnnotate: {
       options: {
         singleQuotes: true
@@ -64,6 +73,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-replace');
   grunt.loadNpmTasks('grunt-ng-annotate');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-serve');
@@ -72,5 +82,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['js']);
   grunt.registerTask('test', ['karma']);
 
-  grunt.registerTask('js', ['ngAnnotate', 'uglify']);
+  grunt.registerTask('js', ['replace', 'ngAnnotate', 'uglify']);
 };

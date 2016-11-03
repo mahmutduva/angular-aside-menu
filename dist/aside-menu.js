@@ -11,9 +11,8 @@
 
 
 'use strict';
-var module = angular.module('asideModule', [])
-
-
+angular
+    .module('asideModule', [])
     .directive('asideMenuToggle', ['$compile', function ($compile) {
         'use strict';
 
@@ -148,6 +147,15 @@ var module = angular.module('asideModule', [])
 
 
                             scope.targetMenu.item.css("transform", "translate3d(0, 0, 0)");
+
+
+                        }
+
+                        if (scope.targetMenu.isBackdrop == "true") {
+
+                            var el = document.getElementsByClassName("aside-back-drop");
+
+                            angular.element(el).remove();
 
 
                         }
