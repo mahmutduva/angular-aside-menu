@@ -5,6 +5,8 @@
 
 # angular-aside-menu
 Imagine an aside menu that pushes your page or comes over it and so on.
+
+# ng2-aside
 [Click](https://github.com/mahmutduva/ng2-aside) for angular2 version.
 
 ## Features
